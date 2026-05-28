@@ -1,0 +1,28 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "Portafolio de Neyra Lopez",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "author": "Neyra Patricia Lopez Armenta",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^13.0.6",
+    "glop": "^0.3.1",
+    "gulp": "^5.0.1",
+    "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.98.0",
+    "sharp": "^0.34.5",
+    "terser": "^5.47.1"
+  }
+}

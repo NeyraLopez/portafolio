@@ -1,0 +1,84 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.section-proyectos{
+    background-color: $rosa;
+
+    .proyectos-contenido{
+        @include m.contenedor;
+
+        @include m.tablet{
+            @include m.grid(2, 2rem);
+        }
+
+        @include m.desktop{
+            @include m.grid(3, 2rem);
+        }
+        
+        .proyectos{
+            @include m.tablet{
+                width: 35rem;
+                height: 32rem;
+            }
+        }
+    }
+}
+
+
+.proyecto{
+    background-color: $blanco;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    img{
+        border-radius: 0.8rem;
+    }
+
+    &:hover{
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    span{
+        color: $morado;
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1.4rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    h3{
+        margin: 0.5rem 0;
+    }
+
+    a{
+        //background-color: $rosa;
+        @include m.boton-pro;
+    }
+}
+
+.icon{
+    display: flex;
+    transition: transform 0.3s ease;
+
+}
+
+/* Estado inicial */
+.hidden {
+  opacity: 0;
+  transform: translateY(4rem);
+}
+
+/* Estado visible */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}

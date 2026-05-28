@@ -1,0 +1,20 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.sobre-mi{
+
+    @include m.contenedor;
+
+    @include m.tablet{
+        @include m.grid(2, 5rem);
+    }
+}
+
+.sobreMi-contenido{
+    margin-top: 4rem;
+
+    p{
+        margin: 1rem 0;
+        text-align: justify;
+    }
+}
