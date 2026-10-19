@@ -13,6 +13,7 @@ cards.forEach(card => observer.observe(card));
 function navegacionFija(){
     const header = document.querySelector('.header')
     const sobreMi = document.querySelector('.sobre-mi')
+    if(!sobreMi) return; //solo existe en index.html
 
     document.addEventListener('scroll', function(){ //metodo bottom
       if(sobreMi.getBoundingClientRect().bottom <= 0){//getBoundingClientRect para cordenadas del elemento
@@ -62,10 +63,11 @@ function scrollNav(){
 
   navLinks.forEach(link => {
     link.addEventListener('click', function(e){
-      e.preventDefault();
       const sectionScroll = e.target.getAttribute('href');
-      const section = document.querySelector(sectionScroll);
+      if(!sectionScroll.startsWith('#')) return; //enlace a otra pagina (ej. index.html#contacto)
 
+      e.preventDefault();
+      const section = document.querySelector(sectionScroll);
       section.scrollIntoView({behavior: 'smooth'});
     })
   })

@@ -1,41 +1,157 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as *;
+
+// Hero del proyecto
 .section-inicio{
-    background-color: $azul;
+    background: linear-gradient(135deg, $morado, $azul);
     margin-bottom: 5rem;
 }
 
 .contenedor-inicio{
-    height: auto;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 2rem;
+    gap: 4rem;
+    align-items: center;
+
+    @include m.tablet{
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
 .info-inicio{
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info{
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
+
+    @include m.tablet{
+        align-items: flex-start;
+        text-align: left;
+    }
 
     h2{
-        margin: 0;
+        margin: 0 0 1rem 0;
         font-size: 3.5rem;
+        @include m.desktop{
+            font-size: 4.5rem;
+        }
     }
 
     p{
-        font-size: 2rem;
-        text-align: center;
+        font-size: 1.8rem;
+        margin: 0 0 3rem 0;
     }
 
-    h2,p{
+    h2, p{
         color: $blanco;
     }
+}
 
+.enlaces-proyecto{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+
+    @include m.telefono{
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
+    }
+
+    @include m.tablet{
+        justify-content: flex-start;
+    }
+
+    a{
+        justify-content: center;
+        text-align: center;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+
+    .boton-secundario{
+        @include m.boton;
+        background-color: transparent;
+        border: .2rem solid $blanco;
+
+        &:hover{
+            background-color: $blanco;
+            color: $morado;
+        }
+    }
+}
+
+.imagen-proyecto img{
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, .3);
+}
+
+// Contenido del proyecto
+.contenido-proyecto{
+    display: grid;
+    gap: 4rem;
+    margin-bottom: 7rem;
+
+    @include m.tablet{
+        grid-template-columns: 2fr 1fr;
+    }
+
+    h2{
+        color: $morado;
+        font-size: 2.8rem;
+        position: relative;
+        padding-bottom: 1rem;
+
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 6rem;
+            height: .4rem;
+            border-radius: 1rem;
+            background: linear-gradient(90deg, $morado, $rosa);
+        }
+    }
+}
+
+.info-proyecto p{
+    max-width: 70ch;
+    font-size: 1.8rem;
+    color: $gris;
+}
+
+.section-tecnologias{
+    align-self: start;
+    background-color: $secundario;
+    border-radius: 1rem;
+    padding: 3rem;
+}
+
+.tecnologias-proyecto{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    span{
+        background-color: $blanco;
+        color: $morado;
+        border: .2rem solid $morado;
+        border-radius: 5rem;
+        padding: .5rem 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+
+.volver{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7rem;
+
+    a{
+        @include m.boton-pro;
+        padding: 1rem 2rem;
+    }
 }
