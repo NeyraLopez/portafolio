@@ -57,9 +57,7 @@
     h3{
         margin: 0.5rem 0;
     }
-
     a{
-        //background-color: $rosa;
         @include m.boton-pro;
     }
 }

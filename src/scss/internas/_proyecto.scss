@@ -1,0 +1,41 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as *;
+.section-inicio{
+    background-color: $azul;
+    margin-bottom: 5rem;
+}
+
+.contenedor-inicio{
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+}
+
+.info-inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        margin: 0;
+        font-size: 3.5rem;
+    }
+
+    p{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    h2,p{
+        color: $blanco;
+    }
+
+}

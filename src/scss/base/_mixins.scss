@@ -1,4 +1,5 @@
 @use 'base/variables' as *;
+@use "sass:color";
 
 @mixin telefono{
     @media(min-width: $telefono){
@@ -37,7 +38,7 @@
 }
 
 @mixin boton-pro{
-    background: linear-gradient(135deg, $morado, $rosa);
+        background: linear-gradient(135deg, $morado, $rosa);
         color: $blanco;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
@@ -58,4 +59,23 @@
                 transform: translateX(0.5rem);
             }
         }
+}
+
+
+@mixin boton{
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $rosa;
+    color: $blanco;
+    cursor: pointer;
+
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: color.adjust($rosa, $lightness: -5%);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+    }
 }

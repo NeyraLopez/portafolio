@@ -69,28 +69,6 @@ body > section {
     margin: 1rem;
 }
 
-.boton{
-    text-decoration: none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: $rosa;
-    color: $blanco;
-    cursor: pointer;
-
-    font-weight: 700;
-    transition: all 0.3s ease;
-
-    &:hover{
-        background: $hoverRosa;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
-    }
-}
-
-.boton-pro{
-    @include m.boton-pro;
-}
-
 .subtitulo{
     color: $blanco;
     text-align: center;

@@ -31,6 +31,9 @@
         //color: $blanco;
         text-align: center;
     }
+    a{
+        @include m.boton;
+    }
 }
 
 
