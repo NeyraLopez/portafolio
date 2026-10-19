@@ -74,3 +74,19 @@ body > section {
     text-align: center;
     font-size: 3.5rem;
 }
+
+// Foco visible al navegar con teclado (anillo doble: se ve sobre cualquier fondo)
+a:focus-visible{
+    outline: .3rem solid $blanco;
+    outline-offset: .2rem;
+    box-shadow: 0 0 0 .6rem $fondo;
+    border-radius: .3rem;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}

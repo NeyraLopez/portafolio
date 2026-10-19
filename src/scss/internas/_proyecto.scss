@@ -1,9 +1,11 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as *;
+@use "sass:color";
 
 // Hero del proyecto
 .section-inicio{
-    background: linear-gradient(135deg, $morado, $azul);
+    // azul oscurecido para que el texto blanco cumpla contraste AA
+    background: linear-gradient(135deg, $morado, color.adjust($azul, $lightness: -15%));
     margin-bottom: 5rem;
 }
 
@@ -13,6 +15,10 @@
     align-items: center;
 
     @include m.tablet{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include m.desktop{
         grid-template-columns: 1fr 2fr;
     }
 }
@@ -65,8 +71,9 @@
     a{
         justify-content: center;
         text-align: center;
+        white-space: nowrap;
         padding: 1rem 2rem;
-        font-size: 1.6rem;
+        font-size: 1.9rem; // >= 18.66px en negrita = texto grande (contraste AA)
     }
 
     .boton-secundario{

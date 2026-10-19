@@ -1,45 +1,9 @@
 @use 'mixins' as m;
-@use 'variables' as *;
-@use "sass:color";
 
 .boton{
-    text-decoration: none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: $rosa;
-    color: $blanco;
-    cursor: pointer;
-
-    font-weight: 700;
-    transition: all 0.3s ease;
-
-    &:hover{
-        background-color: color.adjust($rosa, $lightness: -5%);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
-    }
+    @include m.boton;
 }
 
 .boton-pro{
-    background: linear-gradient(135deg, $morado, $rosa);
-    color: $blanco;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-    font-size: 1.7rem;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-
-    //margin-top: 1rem;;
-
-    &:hover{
-        transform: translateY(-2px);
-        transform: translateY(-2px);
-        box-shadow: 0 1rem 2.5rem $morado;
-        .icon {
-            transform: translateX(0.5rem);
-        }
-    }
+    @include m.boton-pro;
 }

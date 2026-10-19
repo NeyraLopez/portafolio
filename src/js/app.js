@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.proyecto');
+const cards = document.querySelectorAll('.hidden');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -40,7 +40,6 @@ function resaltarEnlace(){
 
     if(window.scrollY >= (sectionTop - sectionHeight / 3)){
       actual = section.id;
-      console.log(actual);
     }
   })
 

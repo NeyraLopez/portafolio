@@ -80,3 +80,10 @@
   transform: translateY(0);
   transition: all 0.6s ease;
 }
+
+@media (prefers-reduced-motion: reduce){
+    .hidden{
+        opacity: 1;
+        transform: none;
+    }
+}
